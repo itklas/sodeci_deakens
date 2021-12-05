@@ -76,7 +76,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="../Fichiers_includes/sidebar.css">
-    <title>Enregistrement de rapport</title>
+    <title>Modifier de rapport</title>
 </head>
 
 <body>
@@ -90,7 +90,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
              include_once('../Fichiers_includes/haut-bar.php');    
             ?>
 
-            <h1>Ajouter un rapport</h1>
+            <h1>Modifier un rapport</h1>
             <form action="" method="post" class='register_form'>
                 <div class='input_label_bloc'>
                     <label for="">ID Dossier</label>
@@ -156,89 +156,9 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                     <label for="observations">Observation</label>
                     <textarea name="observations" id="observations" cols="30" rows="10"></textarea>
                 </div>
-                <button type="submit" name="valider">Ajouter rapport</button>
+                <button type="submit" name="valider">Modifier rapport</button>
                 <!-- <input type="submit" name="submit" value="Enregistrer"> -->
-            </form>
-            
-            <h2>Différrents dossiers enregistrés</h2>
-            <table class="register_table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>N° Dossier</th>
-                        <th>Nom et Prenoms</th>
-                        <th>Quartier / Adresse</th>
-                        <th>N°Piece (Type)</th>
-                        <th>Contact</th>
-                        <th>Date de réception</th>
-                        <th>Enregistrer par</th>
-                        <th>Actions</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                <?php foreach($dossiers as $dossier):?>
-                    <tr>
-                        <td><?php echo $dossier['idDossier']?></td>
-                        <td><?php echo $dossier['numeroAgence'].'-'.$dossier['idDossier'].'-'.$dossier['nomProjet']?></td>
-                        <td><?php echo $dossier['nomClient'].' '.$dossier['prenomClient']?></td>
-                        <td><?php echo $dossier['quartierClient'].' / '.$dossier['adresseGeographieClient']?></td>
-                        <td><?php echo $dossier['numeroPieceClient']?></td>
-                        <td><?php echo $dossier['contactClient']?></td>
-                        <td><?php echo $dossier['dateReception']?></td>
-                        <td><?php echo $dossier['nomUtilisateur'].' '.$dossier['prenomUser']?></td>
-                        <!-- <td><?php //echo $dossier['lname'].' '.$dossier['fname']?></td> -->
-                        <td><a href="ajouterRapport.php?id=<?= $dossier['idDossier']; ?>">Ajouter un rapport</a></td>
-                    </tr>
-                <?php endforeach;?>
-                </tbody>
-                <tfoot></tfoot>
-            </table>
-            
-            <h2>Différrents rappots enregistrés</h2>
-            <table class="register_table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>N° Dossier</th>
-                        <th>Demande SODECI</th>
-                        <th>Polices</th>
-                        <th>Code secteur</th>
-                        <th>Paye</th>
-                        <th>Montant</th>
-                        <th>Traversée-Bitume-Ciment</th>
-                        <th>Linéaire de branchement</th>
-                        <th>Conduite de Branchement</th>
-                        <th>Date de réalisation</th>
-                        <th>Date de traitement</th>
-                        <th>Observation</th>
-                        <th>Actions</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                <?php foreach($dossiers as $dossier):?>
-                    <tr>
-                        <td><?php echo $dossier['idDossier']?></td>
-                        <td><?php echo $dossier['numeroAgence'].'-'.$dossier['idDossier'].'-'.$dossier['nomProjet']?></td>
-                        <td><?php echo $dossier['demandeSodeci']?></td>
-                        <td><?php echo $dossier['polices']?></td>
-                        <td><?php echo $dossier['codeSecteur']?></td>
-                        <td><?php echo $dossier['paye']?></td>
-                        <td><?php echo $dossier['montant']?></td>
-                        <td><?php echo $dossier['traverseeBitumeCiment']?></td>
-                        <td><?php echo $dossier['lineaireBranchement']?></td>
-                        <td><?php echo $dossier['conduiteDeBranchement']?></td>
-                        <td><?php echo $dossier['dateDeRealisation']?></td>
-                        <td><?php echo $dossier['dateDeTraitement']?></td>
-                        <td><?php echo $dossier['observation']?></td>
-                        <!-- <td><?php //echo $dossier['lname'].' '.$dossier['fname']?></td>           -->
-                        <td><a href="modifierRapport.php?id=<?= $dossier['idDossier']; ?>">Modifier rapport</a></td>
-                    </tr>
-                <?php endforeach;?>
-                </tbody>
-                <tfoot></tfoot>
-            </table> 
+            </form>            
         </div>
     </div>
 </body>

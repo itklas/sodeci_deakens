@@ -158,8 +158,8 @@ $users = $resultat->fetchAll();
                         <td><?php echo $dossier['nomUtilisateur'].' '.$dossier['prenomUser']?></td>
                         <!-- <td><?php //echo $dossier['lname'].' '.$dossier['fname']?></td>           -->
                         <td>
-                            <a href=""><i class="fas fa-pen-square"></i></a>
-                            <a href=""><i class="fas fa-trash"></i></a>
+                            <a href="modifierDossier.php?id=<?=$dossier['idDossier']?>"><i class="fas fa-pen-square"></i></a>
+                            <a href="supprimerDossier.php?id=<?=$dossier['idDossier']?>"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                 <?php endforeach;?>
