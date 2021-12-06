@@ -11,7 +11,6 @@ body{
     align-items: center;
     height: 100vh;
     width: 100%;
-
 }
 
 .form-block h2{
@@ -32,7 +31,6 @@ body{
 
 .form-block label{
     margin-left: 70px;
-    
 }
 
 .form-block input[type=text]{
@@ -41,6 +39,7 @@ body{
     height: 40px;
     width: 65%;   
 }
+
 .form-block input[type=password]{
     display: block;
     margin: 0 auto;

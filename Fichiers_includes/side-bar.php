@@ -9,19 +9,16 @@
 </head>
 <body>
     <nav class="nav-bar">
-    <h1>Tableau de bord</h1>
-    <div class="side-bar">
-            <ul>
-                <li><a href="../Dossiers_projet/accueil.php">Tableau de bord</a></li>
-                <li><a href="../Dossiers_projet/dossier.php">Enregistrer un dossier</a></li>
-                <li><a href="">Clients traités</a></li>
-                <li><a href="../Dossiers_projet/agence.php">Créer Agence</a></li>
-                <li><a href="../Dossiers_projet/projet.php">Créer un projet</a></li>
-                <li><a href="../Dossiers_projet/rapport.php">Voir différents rapports</a></li>
-                <li><a href="../Utilisateurs/enregistrerUtilisateur.php">Différents utilisateurs</a></li>
-                <li><a href="../Utilisateurs/deconnexion.php">Déconnexion</a></li>
-            </ul>
-        </div> 
+        <ul>
+            <li><a href="../Dossiers_projet/accueil.php">Tableau de bord</a></li>
+            <li><a href="../Dossiers_projet/dossier.php">Enregistrer un dossier</a></li>
+            <li><a href="">Clients traités</a></li>
+            <li><a href="../Dossiers_projet/agence.php">Créer Agence</a></li>
+            <li><a href="../Dossiers_projet/projet.php">Créer un projet</a></li>
+            <li><a href="../Dossiers_projet/rapport.php">Voir différents rapports</a></li>
+            <li><a href="../Utilisateurs/enregistrerUtilisateur.php">Différents utilisateurs</a></li>
+            <li><a href="../Utilisateurs/deconnexion.php">Déconnexion</a></li>
+        </ul>
     </nav>
 </body>
 </html>
