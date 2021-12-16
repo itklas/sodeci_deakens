@@ -14,14 +14,12 @@ $prenomUser = $_SESSION['prenomUser'];
     <title>Document</title>
 </head>
 <body>
-    <div class="content">       
-        <div class="content-right">
-            <h2>Enregistrement Dossier</h2>
-            <div>
-                <p><?php echo 'Mr. '.$nomUtilisateur.' '.$prenomUser?></p>
-                <p>En ligne</p>
-                
-            </div>
+    <div class="content-right">
+        <h2>Enregistrement Dossier</h2>
+        <div>
+            <p><?php echo 'Mr. '.$nomUtilisateur.' '.$prenomUser?></p>
+            <p>En ligne</p>
+            
         </div>
     </div>
 </body>

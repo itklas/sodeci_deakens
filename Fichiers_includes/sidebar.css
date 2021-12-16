@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    transition: .35s ease;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.accueil,
+.register{
+    display: flex;
+}
+
+.nav_bar ul{
+    font-weight: lighter;
+    height: 100%;
+    width: 120px;
+    padding-top: 80px;
+    background-color: #1095D8;
+
+}
+.nav_bar ul li{
+    list-style: none;
+}
+
+.nav_bar ul li a{
+    text-decoration: none;
+    color: inherit;
+    font-size: 13px;
+    text-align: center;
+    padding: .5em;
+    margin: 10px 0;
+    color: #fff;
+    border-radius: 5px;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav_bar ul li a:hover{
+    background-color: #087fc4;
+}
+
+.nav_bar .fas, .far{
+    font-size: 28px;
+}
+
+
+.content-right{
+    display: flex;
+    width: calc(100vw - 140px);
+    justify-content: space-between;
+    padding: 10px 40px;
+}
+
+/* register  */
+.register_form{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.input_label_bloc{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.input_label_bloc input, select{
+    width: 250px;
+    height: 30px;
+    outline: none;
+}
+
+.register_form button{
+    padding: .5em 1em;
+    margin: 5px;
+}
+
+.register_rigth > div{
+    margin: 10px 5px;
+}
+.register_table{
+    border-collapse: collapse;
+    width: calc(100vw - 120px);
+}
+
+.register_table tr{
+    font-size: 14px;
+}
+.register_table thead th{
+    background-color: #212222;
+    padding: 5px 0;
+    color: #fff;
+}
+.register_table tbody td{
+    padding: 5px 0;
+    padding-left: 5px;
+}
+
+.register_table td{
+    min-width: 50px;
+
+}
+
+.register_table tbody tr:hover{
+    background-color: #d4d4d4;
+}
+
+.register_table a{
+    text-decoration: none;
+    color: black;
+}
+
+.fas{
+    font-size: 1rem;
+    margin: 0 .5em;
+}
+.fa-pen-square{
+    color: #0a853d;
+}
+
+.fa-trash{
+    color: #c92828;
+}
