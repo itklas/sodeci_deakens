@@ -26,7 +26,8 @@ hr{
     height: 100%;
     width: 120px;
     padding-top: 80px;
-    background-color: #1095D8;
+    background: linear-gradient(to top, #0853c4, #087fc4);
+    /* #087fc4 #0853c4 */
 
 }
 .nav_bar ul li{
