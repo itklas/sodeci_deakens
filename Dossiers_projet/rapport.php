@@ -34,61 +34,55 @@ $users = $resultat->fetchAll();
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="../Fichiers_includes/sidebar.css">
     <title>Enregistrement de rapport</title>
-    <style>
-        .trtb{
-            border: 1px solid red;
-        }
-    </style>
 </head>
 
 <body>
-<?php
-include_once('../Fichiers_includes/side-bar.php');    
-?>
-<?php
-include_once('../Fichiers_includes/haut-bar.php');    
-?>
-<div class="">  
- 
-    <br><br>
-    <h2>Différrents dossiers enregistrés</h2>
-    <table border='1'>
-        <thead>
-            <tr class="trtb">
-                <th>ID Dossier</th>
-                <th>Code de l'agence</th>
-                <th>N° Dossier<br>(codeAgence-ID-Nom projet)</th>
-                <th>Nom et Prenoms</th>
-                <th>Quartier / Adresse</th>
-                <th>N°Piece (Type)</th>
-                <th>Contact</th>
-                <th>Date de réception</th>
-                <th>Enregistrer par</th>
-                <th>Actions</th>
+    <div class="register">
+        <?php
+        include_once('../Fichiers_includes/side-bar.php');    
+        ?>
+        
+        <div class="register_rigth">
+            <?php
+            include_once('../Fichiers_includes/haut-bar.php');    
+            ?>
+            <div class="">  
+                <h2>Différrents dossiers enregistrés</h2>
+                <table class="rapport_table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>N° Dossier</th>
+                            <th>Nom et Prenoms</th>
+                            <th>Quartier / Adresse</th>
+                            <th>Contact</th>
+                            <th>Date de réception</th>
+                            <th>Enregistrer par</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach($dossiers as $dossier):?>
+                        <tr>
+                            <td><?php echo $dossier['idDossier']?></td>
+                            <td><?php echo $dossier['numeroAgence'].'-'.$dossier['idDossier'].'-'.$dossier['nomProjet']?></td>
+                            <td><?php echo $dossier['nomClient'].' '.$dossier['prenomClient']?></td>
+                            <td><?php echo $dossier['quartierClient'].' / '.$dossier['adresseGeographieClient']?></td>
+                            <td><?php echo $dossier['contactClient']?></td>
+                            <td><?php echo $dossier['dateReception']?></td>
+                            <td><?php echo $dossier['nomUtilisateur'].' '.$dossier['prenomUser']?></td>
+                            <!-- <td><?php //echo $dossier['lname'].' '.$dossier['fname']?></td> -->
+                            <td><a href="ajouterRapport.php?id=<?= $dossier['idDossier']; ?>">rapport</a></td>
+                        </tr>
+                    <?php endforeach;?>
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+                <br><br>
                 
-            </tr>
-        </thead>
-        <tbody>
-        <?php foreach($dossiers as $dossier):?>
-            <tr>
-                <td><?php echo $dossier['idDossier']?></td>
-                <td><?php echo $dossier['numeroAgence']?></td>
-                <td><?php echo $dossier['numeroAgence'].'-'.$dossier['idDossier'].'-'.$dossier['nomProjet']?></td>
-                <td><?php echo $dossier['nomClient'].' '.$dossier['prenomClient']?></td>
-                <td><?php echo $dossier['quartierClient'].' / '.$dossier['adresseGeographieClient']?></td>
-                <td><?php echo $dossier['numeroPieceClient']?></td>
-                <td><?php echo $dossier['contactClient']?></td>
-                <td><?php echo $dossier['dateReception']?></td>
-                <td><?php echo $dossier['nomUtilisateur'].' '.$dossier['prenomUser']?></td>
-				<!-- <td><?php //echo $dossier['lname'].' '.$dossier['fname']?></td> -->
-                <td><a href="ajouterRapport.php?id=<?= $dossier['idDossier']; ?>">Ajouter un rapport</a></td>
-            </tr>
-        <?php endforeach;?>
-        </tbody>
-        <tfoot></tfoot>
-    </table>
-    <br><br>
-    
-</div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

@@ -19,8 +19,8 @@ $prenomUser = $_SESSION['prenomUser'];
         <div>
             <p><?php echo 'Mr. '.$nomUtilisateur.' '.$prenomUser?></p>
             <p>En ligne</p>
-            
         </div>
     </div>
+    <hr>
 </body>
 </html>

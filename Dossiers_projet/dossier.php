@@ -130,7 +130,7 @@ $users = $resultat->fetchAll();
             <br><br>
             <table class="register_table">
                 <thead>
-                    <tr class="trtb">
+                    <tr>
                         <th>ID</th>
                         <th>Code de l'agence</th>
                         <th>N° Dossier</th>

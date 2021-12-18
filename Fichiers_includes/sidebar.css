@@ -12,6 +12,10 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
+hr{
+    border: solid 1px gray;
+}
+
 .accueil,
 .register{
     display: flex;
@@ -86,30 +90,44 @@ body{
 .register_rigth > div{
     margin: 10px 5px;
 }
-.register_table{
+
+.register_rigth h2{
+    font-size: 20px;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+.register_table,
+.rapport_table{
     border-collapse: collapse;
     width: calc(100vw - 120px);
 }
 
-.register_table tr{
+.register_table tr,
+.rapport_table tr{
     font-size: 14px;
 }
-.register_table thead th{
+.register_table thead th,
+.rapport_table thead th{
     background-color: #212222;
     padding: 5px 0;
     color: #fff;
 }
-.register_table tbody td{
+.register_table tbody td,
+.rapport_table tbody td{
     padding: 5px 0;
     padding-left: 5px;
+    
+    text-align: center;
 }
 
-.register_table td{
-    min-width: 50px;
+/* .register_table td,
+.rapport_table td{
+    min-width: 20px;
 
-}
+} */
 
-.register_table tbody tr:hover{
+.register_table tbody tr:hover,
+.rapport_table tbody tr:hover{
     background-color: #d4d4d4;
 }
 
@@ -119,8 +137,8 @@ body{
 }
 
 .fas{
-    font-size: 1rem;
-    margin: 0 .5em;
+    font-size: 1.3rem;
+    margin: 0 5px;
 }
 .fa-pen-square{
     color: #0a853d;
