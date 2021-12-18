@@ -104,7 +104,7 @@ $users = $resultat->fetchAll();
                 </div>
                 <div class='input_label_bloc'>
                     <label for="typePieceClient">Type de pièce</label>
-                    <select for="typePieceClient" name="typePieceClient"><br><br>
+                    <select for="typePieceClient" name="typePieceClient">
                         <option value="cni">cni</option>
                         <option value="oni">oni</option>
                         <option value="Passe-port">Passe-port</option>
@@ -113,15 +113,15 @@ $users = $resultat->fetchAll();
                 <!-- <input id="typePieceClient" type="text" name="typePieceClient"> <br><br> -->
                 <div class='input_label_bloc'>
                     <label for="numeroPieceClient">Numéro de pièce</label>
-                    <input id="numeroPieceClient" type="text" name="numeroPieceClient"> <br><br>
+                    <input id="numeroPieceClient" type="text" name="numeroPieceClient">
                 </div>
                 <div class='input_label_bloc'>   
                     <label for="contactClient">Contact client</label>
-                    <input id="contactClient" type="text" name="contactClient"> <br><br>
+                    <input id="contactClient" type="text" name="contactClient">
                 </div>
                 <div class='input_label_bloc'>
                     <label for="dateReception">Date de réception</label>
-                    <input id="dateReception" type="date" name="dateReception"><br><br>
+                    <input id="dateReception" type="date" name="dateReception">
                 </div>
                 <button type="submit" name="valider">Enregistrer</button>
                 <button type="reset" name="valider">Annuler</button>

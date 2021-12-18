@@ -72,63 +72,82 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="../Fichiers_includes/sidebar.css">
     <title>Creation Dossier</title>
     
 </head>
 
 <body>
-<?php
-include_once('../Fichiers_includes/side-bar.php');    
-?>
-<?php
-include_once('../Fichiers_includes/haut-bar.php');    
-?>
 <div class="register">
     <?php
     include_once('../Fichiers_includes/side-bar.php');    
     ?>
-    <h1>Modifier un Dossier</h1>
-    <form action="" method="post">
-        <label for="nomProjet">Nom projet</label>
-        <select id="nomProjet" name="nomProjet">
-        <?php foreach($projets as $projet):?>
-            <!-- <option>Choisir un projet</option> -->
-            <option value="<?php echo $idProjet;?>"><?php echo $projet['nomProjet'];?></option>
-        <?php endforeach;?>
-        </select><br><br>
-        <label for="numeroAgence">Code de l'agence</label>
-        <select id="numeroAgence" name="numeroAgence">
-        <?php foreach($agences as $agence):?>
-            <!-- <option>Choisir une agence</option> -->
-            <option value="<?php echo $agence['idAgence'];?>">
-            <?php echo $agence['numeroAgence'];?></option>
-        <?php endforeach;?>
-        </select><br><br>
-        
-        <label for="nomClient">Nom</label>
-        <input id="nomClient" type="text" name="nomClient" value="<?= $nomClient; ?>"><br><br>
-        <label for="prenomClient">Prenom</label>
-        <input id="prenomClient" type="text" name="prenomClient" value="<?= $prenomClient; ?>"> <br><br>
-        <label for="adresseGeographieClient">Adresse Géographique</label>
-        <input id="adresseGeographieClient" type="text" name="adresseGeographieClient" value="<?= $adresseGeographieClient; ?>"> <br><br>
-        <label for="quartierClient">Quartier</label>
-        <input id="quartierClient" type="text" name="quartierClient" value="<?= $quartierClient; ?>"> <br><br>
-        <label for="typePieceClient">Type de pièce</label>
-        <select for="typePieceClient" name="typePieceClient"><br><br>
-            <option value="cni" <?=($typePieceClient==='cni')?'selected':'';?>>cni</option>
-            <option value="oni" <?=($typePieceClient==='oni')?'selected':'';?>>oni</option>
-            <option value="Passe-port" <?=($typePieceClient==='Passe-port')?'selected':'';?>>Passe-port</option>
-        </select>
-        <!-- <input id="typePieceClient" type="text" name="typePieceClient"> <br><br> -->
-        <label for="numeroPieceClient">Numéro de pièce</label>
-        <input id="numeroPieceClient" type="text" name="numeroPieceClient" value="<?= $numeroPieceClient; ?>"> <br><br>
-        <label for="contactClient">Contact client</label>
-        <input id="contactClient" type="text" name="contactClient" value="<?= $contactClient; ?>"> <br><br>
-        <label for="dateReception">Date de réception</label>
-        <input id="dateReception" type="date" name="dateReception" value="<?= $dateReception; ?>"><br><br>
-        <button type="submit" name="valider">Enregistrer</button>
-        <!-- <input type="submit" name="submit" value="Enregistrer"> -->
-    </form>
+    <div class="register_rigth">
+        <?php
+        include_once('../Fichiers_includes/haut-bar.php');    
+        ?>
+        <h1>Modifier un Dossier</h1>
+        <form action="" method="post" class='register_form'>
+            <div class='input_label_bloc'>
+                <label for="nomProjet">Nom projet</label>
+                <select id="nomProjet" name="nomProjet">
+                <?php foreach($projets as $projet):?>
+                    <option value="<?php echo $idProjet;?>"><?php echo $projet['nomProjet'];?></option>
+                <?php endforeach;?>
+                </select>
+            </div>
+            <div class='input_label_bloc'>
+                <label for="numeroAgence">Code de l'agence</label>
+                <select id="numeroAgence" name="numeroAgence">
+                <?php foreach($agences as $agence):?>
+                    <!-- <option>Choisir une agence</option> -->
+                    <option value="<?php echo $agence['idAgence'];?>">
+                    <?php echo $agence['numeroAgence'];?></option>
+                <?php endforeach;?>
+                </select>
+            </div>
+            <div class='input_label_bloc'>
+                <label for="nomClient">Nom</label>
+                <input id="nomClient" type="text" name="nomClient" value="<?= $nomClient; ?>">
+            </div>
+            <div class='input_label_bloc'>
+                <label for="prenomClient">Prenom</label>
+                <input id="prenomClient" type="text" name="prenomClient" value="<?= $prenomClient; ?>"> 
+            </div>
+            <div class='input_label_bloc'>
+                <label for="adresseGeographieClient">Adresse Géographique</label>
+                <input id="adresseGeographieClient" type="text" name="adresseGeographieClient" value="<?= $adresseGeographieClient; ?>">
+            </div>
+            <div class='input_label_bloc'>
+                <label for="quartierClient">Quartier</label>
+                <input id="quartierClient" type="text" name="quartierClient" value="<?= $quartierClient; ?>"> 
+            </div>
+            <div class='input_label_bloc'>
+                <label for="typePieceClient">Type de pièce</label>
+                <select for="typePieceClient" name="typePieceClient">
+                    <option value="cni" <?=($typePieceClient==='cni')?'selected':'';?>>cni</option>
+                    <option value="oni" <?=($typePieceClient==='oni')?'selected':'';?>>oni</option>
+                    <option value="Passe-port" <?=($typePieceClient==='Passe-port')?'selected':'';?>>Passe-port</option>
+                </select>
+            </div>
+            <div class='input_label_bloc'>
+                <label for="numeroPieceClient">Numéro de pièce</label>
+                <input id="numeroPieceClient" type="text" name="numeroPieceClient" value="<?= $numeroPieceClient; ?>">
+            </div>
+            <div class='input_label_bloc'>
+                <label for="contactClient">Contact client</label>
+                <input id="contactClient" type="text" name="contactClient" value="<?= $contactClient; ?>">
+            </div>
+            <div class='input_label_bloc'>
+                <label for="dateReception">Date de réception</label>
+                <input id="dateReception" type="date" name="dateReception" value="<?= $dateReception; ?>">
+            </div>
+            <button type="submit" name="valider">Enregistrer</button>
+            <!-- <input type="submit" name="submit" value="Enregistrer"> -->
+        </form>
+    </div>
+</div>
 </div>    
 </body>
 </html>

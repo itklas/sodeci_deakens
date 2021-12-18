@@ -47,13 +47,7 @@ if(isset($_POST['valider'])){
         }
         
     }
-}
-?>
-<?php
-    include_once('../Fichiers_includes/side-bar.php');    
-?>
-<?php
-    include_once('../Fichiers_includes/haut-bar.php');    
+}   
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -66,30 +60,50 @@ if(isset($_POST['valider'])){
     <title>Création d'utilisateur</title>
 </head>
 <body>
-    <h1>Création d'utilisateur</h1>
-    <form action="" method="post">
-        <label for="nomUtilisateur">Nom d'utilisateur</label>
-        <input id="nomUtilisateur" type="text" name="nomUtilisateur"><br><br>
-        <label for="prenomUser">Prénoms d'utilisateur</label>
-        <input id="prenomUser" type="text" name="prenomUser"><br><br>
-        <label for="pseudoUtilisateur">Pseudo utilisateur</label>
-        <input id="pseudoUtilisateur" type="text" name="pseudoUtilisateur"><br><br>
-        <label for="motPasseUtilisateur">Mot de passe utilisateur</label>
-        <input id="motPasseUtilisateur" type="password" name="motPasseUtilisateur"><br><br>
-        <label for="typeUtilisateur">Type utilisateur</label>
-        <select name="typeUtilisateur" id="">
-            <option>Choisir type d'utilisateur</option>    
-            <option value="1">Admin</option>
-            <option value="2">Invité</option>
-            <option value="3">Responsable</option>             
-        </select><br><br>      
-        <label for="contactUtilisateur">Contact utilisateur</label>
-        <input id="contactUtilisateur" type="text" name="contactUtilisateur"><br><br>
-        <button type="submit" name="valider">Enregistrer</button>
-        <button type="reset" name="valider">Annuler</button>
-    </form>
-    <br><br>
-    
-    <?php require_once('listeUtilisateurs.php')?>    
+<div class="register">
+    <?php
+    include_once('../Fichiers_includes/side-bar.php');    
+    ?>
+    <div class="register_rigth">
+        <?php
+        include_once('../Fichiers_includes/haut-bar.php');    
+        ?>
+        <h1>Création d'utilisateur</h1>
+        <form action="" method="post" class='register_form'>
+            <div class='input_label_bloc'>
+                <label for="nomUtilisateur">Nom d'utilisateur</label>
+                <input id="nomUtilisateur" type="text" name="nomUtilisateur">
+            </div>
+            <div class='input_label_bloc'>
+                <label for="prenomUser">Prénoms d'utilisateur</label>
+                <input id="prenomUser" type="text" name="prenomUser">
+            </div>
+            <div class='input_label_bloc'>
+                <label for="pseudoUtilisateur">Pseudo utilisateur</label>
+                <input id="pseudoUtilisateur" type="text" name="pseudoUtilisateur">
+            </div>
+            <div class='input_label_bloc'>
+                <label for="motPasseUtilisateur">Mot de passe utilisateur</label>
+                <input id="motPasseUtilisateur" type="password" name="motPasseUtilisateur">
+            </div>
+            <div class='input_label_bloc'>
+                <label for="typeUtilisateur">Type utilisateur</label>
+                <select name="typeUtilisateur" id="">
+                    <option>Choisir type d'utilisateur</option>    
+                    <option value="1">Admin</option>
+                    <option value="2">Invité</option>
+                    <option value="3">Responsable</option>             
+                </select>      
+            </div>
+            <div class='input_label_bloc'>
+                <label for="contactUtilisateur">Contact utilisateur</label>
+                <input id="contactUtilisateur" type="text" name="contactUtilisateur"><br><br>
+            </div>
+            <button type="submit" name="valider">Enregistrer</button>
+            <button type="reset" name="valider">Annuler</button>
+        </form>
+        <?php require_once('listeUtilisateurs.php')?>    
+    </div>
+</div>
 </body>
 </html>

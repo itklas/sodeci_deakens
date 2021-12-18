@@ -21,8 +21,8 @@ $data = $resultat->fetchAll();
     <title>Document</title>
 </head>
 <body>
-<table border='1'>
-    <h1>Les différents utilisateurs</h1>
+<h1>Les différents utilisateurs</h1>
+<table class="register_table">
         <thead>
             <tr class="trtb">
                 <th>ID utilisateur</th>
@@ -57,7 +57,12 @@ $data = $resultat->fetchAll();
                     ?>
                 </td>    
 				<td><?php echo $donnee['nb']?></td>
-                <td><a href="modifierUtilisateur.php?id=<?=$donnee['idUtilisateur']?>">Modifier</a>&nbsp;&nbsp;&nbsp;&nbsp;<?=($donnee['nb']>0)?'':'<a href="supprimerUtilisateur.php?id='.$donnee['idUtilisateur'].'">Supprimer</a>';?> </td>
+                <td>
+                    <a href="modifierUtilisateur.php?id=<?=$donnee['idUtilisateur']?>">
+                    <i class="fas fa-pen-square"></i>
+                    </a>
+                    <?=($donnee['nb']>0)?'':'<a href="supprimerUtilisateur.php?id='.$donnee['idUtilisateur'].'"><i class="fas fa-trash"></i></a>';?> 
+                </td>
             </tr>
 			<?php endif;?>
         <?php endforeach;?>

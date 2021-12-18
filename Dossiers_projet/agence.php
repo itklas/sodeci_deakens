@@ -38,25 +38,39 @@ if(isset($_POST['valider'])){
     <title>Document</title>
 </head>
 <body>
-<?php
+<div class="register">
+    <?php
     include_once('../Fichiers_includes/side-bar.php');    
-?>
-<?php
-    include_once('../Fichiers_includes/haut-bar.php');    
-?>
-    <h1>Création agence</h1>
-    <form action="" method="post">
-        <label for="numeroAgence">Numéro agence</label>
-        <input id="numeroAgence" type="text" name="numeroAgence"><br><br>
-        <label for="nomAgence">Nom agence</label>
-        <input id="nomAgence" type="text" name="nomAgence"><br><br>
-        <label for="situationGeoAgence">Situation géo agence</label>
-        <input id="situationGeoAgence" type="text" name="situationGeoAgence"><br><br>
-        <label for="contactAgence">Contact agence</label>
-        <input id="contactAgence" type="text" name="contactAgence"><br><br>
-        <label for="emailAgence">Email agence</label>
-        <input id="emailAgence" type="text" name="emailAgence"><br><br>
-        <button type="submit" name="valider">Enregistrer</button>
-    </form>
+    ?>
+    <div class="register_rigth">
+        <?php
+        include_once('../Fichiers_includes/haut-bar.php');    
+        ?>
+        <h1>Création agence</h1>
+        <form action="" method="post" class='register_form'>
+            <div class='input_label_bloc'>
+                <label for="numeroAgence">Numéro agence</label>
+                <input id="numeroAgence" type="text" name="numeroAgence">
+            </div>
+            <div class='input_label_bloc'>
+                <label for="nomAgence">Nom agence</label>
+                <input id="nomAgence" type="text" name="nomAgence">
+            </div>
+            <div class='input_label_bloc'>
+                <label for="situationGeoAgence">Situation géo agence</label>
+                <input id="situationGeoAgence" type="text" name="situationGeoAgence">
+            </div>
+            <div class='input_label_bloc'>
+                <label for="contactAgence">Contact agence</label>
+                <input id="contactAgence" type="text" name="contactAgence">
+            </div>
+            <div class='input_label_bloc'>
+                <label for="emailAgence">Email agence</label>
+                <input id="emailAgence" type="text" name="emailAgence">
+            </div>
+            <button type="submit" name="valider">Créer Angence</button>
+        </form>
+    </div>
+</div>
 </body>
 </html>
