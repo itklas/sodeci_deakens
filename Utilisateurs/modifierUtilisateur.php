@@ -86,8 +86,10 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                 <label for="contactUtilisateur">Contact utilisateur</label>
                 <input id="contactUtilisateur" type="text" name="contactUtilisateur" value="<?= @$datasUtilisateur['contactUtilisateur']; ?>">
             </div>
-            <button type="submit" name="valider">Enregistrer</button>
-            <button type="reset" name="valider">Annuler</button>
+            <div>
+                <button type="submit" name="valider">Enregistrer</button>
+                <button type="reset" name="valider">Annuler</button>
+            </div>
         </form>
     </div>
 </div>

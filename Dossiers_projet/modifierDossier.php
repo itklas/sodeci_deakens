@@ -143,7 +143,9 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                 <label for="dateReception">Date de réception</label>
                 <input id="dateReception" type="date" name="dateReception" value="<?= $dateReception; ?>">
             </div>
-            <button type="submit" name="valider">Enregistrer</button>
+            <div>
+                <button type="submit" name="valider">Enregistrer</button>
+            </div>
             <!-- <input type="submit" name="submit" value="Enregistrer"> -->
         </form>
     </div>

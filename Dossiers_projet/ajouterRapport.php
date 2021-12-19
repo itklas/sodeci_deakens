@@ -148,19 +148,26 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                 <div class='input_label_bloc'>
                     <label for="paye">Paye</label>
                     <div>
-                        <input id="paye" type="radio" name="paye" value="oui">Oui 
-                        <input id="paye" type="radio" name="paye" value="non">Non 
+                        
+                            <label for="oui">Oui</label>
+                            <input id="paye" type="radio" name="paye" value="oui" id="oui"> 
+                        
+                        
+                            <label for="non">Non</label>
+                            <input id="paye" type="radio" name="paye" value="non" id="non">
+                        
                     </div>
                 </div>
                 <div class='input_label_bloc'>
                     <label for="observations">Observation</label>
-                    <textarea name="observations" id="observations" cols="30" rows="10"></textarea>
+                    <textarea name="observations" id="observations" cols="60" rows="10"></textarea>
                 </div>
-                <button type="submit" name="valider">Ajouter rapport</button>
-                <!-- <input type="submit" name="submit" value="Enregistrer"> -->
+                <div>
+                    <button type="submit" name="valider">Ajouter rapport</button>
+                </div>
             </form>
             
-            <h2>Différrents dossiers enregistrés</h2>
+            <h2 class="table_title">Différrents dossiers enregistrés</h2>
             <table class="register_table">
                 <thead>
                     <tr>
@@ -194,8 +201,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                 </tbody>
                 <tfoot></tfoot>
             </table>
-            
-            <h2>Différrents rappots enregistrés</h2>
+            <h2 class="table_title">Différrents rappots enregistrés</h2>
             <table class="register_table">
                 <thead>
                     <tr>

@@ -13,7 +13,7 @@ body{
 }
 
 hr{
-    border: solid 1px gray;
+    border: solid .5px rgb(0, 102, 255);
 }
 
 .accueil,
@@ -24,7 +24,7 @@ hr{
 .nav_bar ul{
     font-weight: lighter;
     height: 100%;
-    width: 120px;
+    width: 80px;
     padding-top: 80px;
     background: linear-gradient(to top, #0853c4, #087fc4);
     /* #087fc4 #0853c4 */
@@ -63,13 +63,15 @@ hr{
     display: flex;
     width: calc(100vw - 140px);
     justify-content: space-between;
-    padding: 10px 40px;
+    padding: 10px 20px;
 }
 
 /* register  */
 .register_form{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    
 }
 
 .input_label_bloc{
@@ -77,15 +79,54 @@ hr{
     flex-direction: column;
     margin: 10px;
 }
-.input_label_bloc input, select{
+.input_label_bloc input[type='text'], 
+input[type='date'],
+input[type='password'], 
+select{
     width: 250px;
     height: 30px;
     outline: none;
+    font-size: 16px;
+
+    border: none;
+    border-bottom: solid 1.5px #087fc4;
+    background-color: #f0f0f0;
+}
+
+.input_label_bloc textarea{
+    font-size: 16px;
+}
+
+.input_label_bloc input:focus{
+    background-color: #8ed2fa;
 }
 
 .register_form button{
     padding: .5em 1em;
     margin: 5px;
+    color: #fff;
+    font-weight: 600;
+
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    border: none;
+    cursor: pointer;
+}
+
+button[type="submit"]{
+    background-color: #05a805;
+}
+button[type="submit"]:hover{
+    background-color: #048804;
+}
+
+button[type="reset"]{
+    background-color: #c90414;
+}
+button[type="reset"]:hover{
+    background-color: #960511;
 }
 
 .register_rigth > div{
@@ -101,6 +142,11 @@ hr{
 .rapport_table{
     border-collapse: collapse;
     width: calc(100vw - 120px);
+    margin: 0 auto;
+}
+
+.table_title{
+    margin: 20px 0px;
 }
 
 .register_table tr,
@@ -109,7 +155,7 @@ hr{
 }
 .register_table thead th,
 .rapport_table thead th{
-    background-color: #212222;
+    background-color: #041C32;
     padding: 5px 0;
     color: #fff;
 }
@@ -141,7 +187,7 @@ hr{
     font-size: 1.3rem;
     margin: 0 5px;
 }
-.fa-pen-square{
+.fa-undo-alt{
     color: #0a853d;
 }
 

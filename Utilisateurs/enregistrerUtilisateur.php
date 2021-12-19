@@ -99,8 +99,10 @@ if(isset($_POST['valider'])){
                 <label for="contactUtilisateur">Contact utilisateur</label>
                 <input id="contactUtilisateur" type="text" name="contactUtilisateur"><br><br>
             </div>
-            <button type="submit" name="valider">Enregistrer</button>
-            <button type="reset" name="valider">Annuler</button>
+            <div>
+                <button type="submit" name="valider">Enregistrer</button>
+                <button type="reset" name="valider">Annuler</button>
+            </div>
         </form>
         <?php require_once('listeUtilisateurs.php')?>    
     </div>

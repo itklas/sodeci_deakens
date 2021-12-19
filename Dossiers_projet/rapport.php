@@ -47,7 +47,7 @@ $users = $resultat->fetchAll();
             include_once('../Fichiers_includes/haut-bar.php');    
             ?>
             <div class="">  
-                <h2>Différrents dossiers enregistrés</h2>
+                <h2 class="table_title">Différrents dossiers enregistrés</h2>
                 <table class="rapport_table">
                     <thead>
                         <tr>
@@ -71,8 +71,7 @@ $users = $resultat->fetchAll();
                             <td><?php echo $dossier['contactClient']?></td>
                             <td><?php echo $dossier['dateReception']?></td>
                             <td><?php echo $dossier['nomUtilisateur'].' '.$dossier['prenomUser']?></td>
-                            <!-- <td><?php //echo $dossier['lname'].' '.$dossier['fname']?></td> -->
-                            <td><a href="ajouterRapport.php?id=<?= $dossier['idDossier']; ?>">Ajouter rapport</a></td>
+                            <td><a href="ajouterRapport.php?id=<?= $dossier['idDossier']; ?>">Rapport</a></td>
                         </tr>
                     <?php endforeach;?>
                     </tbody>

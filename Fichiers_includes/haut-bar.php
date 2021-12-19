@@ -15,7 +15,7 @@ $prenomUser = $_SESSION['prenomUser'];
 </head>
 <body>
     <div class="content-right">
-        <h2>Enregistrement Dossier</h2>
+        <h1>Enregistrement Dossier</h1>
         <div>
             <p><?php echo 'Mr. '.$nomUtilisateur.' '.$prenomUser?></p>
             <p>En ligne</p>

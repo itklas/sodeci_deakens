@@ -25,11 +25,11 @@ $data = $resultat->fetchAll();
 <table class="register_table">
         <thead>
             <tr class="trtb">
-                <th>ID utilisateur</th>
+                <th>ID</th>
                 <th>Nom et Prenoms</th>                
-                <th>Pseudo utilisateur</th>
-                <th>Mot de passe utilisateur</th>
-                <th>Contact utilisateur</th>
+                <th>Pseudo</th>
+                <th>Mot de passe</th>
+                <th>Contact</th>
                 <th>Type utilisateur</th>
                 <th>Nombre de dossiers</th>
                 <th>Actions</th>
@@ -57,9 +57,9 @@ $data = $resultat->fetchAll();
                     ?>
                 </td>    
 				<td><?php echo $donnee['nb']?></td>
-                <td>
+                <td style='text-align:left;'>
                     <a href="modifierUtilisateur.php?id=<?=$donnee['idUtilisateur']?>">
-                    <i class="fas fa-pen-square"></i>
+                    <i class="fas fa-undo-alt"> </i>
                     </a>
                     <?=($donnee['nb']>0)?'':'<a href="supprimerUtilisateur.php?id='.$donnee['idUtilisateur'].'"><i class="fas fa-trash"></i></a>';?> 
                 </td>

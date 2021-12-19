@@ -32,17 +32,25 @@ if(isset($_POST['valider'])){
     <title>Création projet</title>
 </head>
 <body>
-<?php
+<div class="register">
+    <?php
     include_once('../Fichiers_includes/side-bar.php');    
-?>
-<?php
-    include_once('../Fichiers_includes/haut-bar.php');    
-?>
-    <h1>Création projet</h1>
-    <form action="" method="post">
-        <label for="nomProjet">Nom projet</label>
-        <input id="nomProjet" type="text" name="nomProjet">
-        <button type="submit" name="valider">Créer</button>
-    </form>
+    ?>
+    <div class="register_rigth">
+        <?php
+        include_once('../Fichiers_includes/haut-bar.php');    
+        ?>
+        <h1>Création projet</h1>
+        <form action="" method="post" class='register_form'>
+            <div class='input_label_bloc'>
+                <label for="nomProjet">Nom projet</label>
+                <input id="nomProjet" type="text" name="nomProjet">
+            </div>
+            <div>
+                <button type="submit" name="valider">Créer</button>
+            </div>
+        </form>
+    </div>
+</div>
 </body>
 </html>

@@ -123,8 +123,10 @@ $users = $resultat->fetchAll();
                     <label for="dateReception">Date de réception</label>
                     <input id="dateReception" type="date" name="dateReception">
                 </div>
-                <button type="submit" name="valider">Enregistrer</button>
-                <button type="reset" name="valider">Annuler</button>
+                <div>
+                    <button type="submit" name="valider">Enregistrer</button>
+                    <button type="reset" name="valider">Annuler</button>
+                </div>
                 <!-- <input type="submit" name="submit" value="Enregistrer"> -->
             </form>
             <br><br>
@@ -158,7 +160,7 @@ $users = $resultat->fetchAll();
                         <td><?php echo $dossier['nomUtilisateur'].' '.$dossier['prenomUser']?></td>
                         <!-- <td><?php //echo $dossier['lname'].' '.$dossier['fname']?></td>           -->
                         <td>
-                            <a href="modifierDossier.php?id=<?=$dossier['idDossier']?>"><i class="fas fa-pen-square"></i></a>
+                            <a href="modifierDossier.php?id=<?=$dossier['idDossier']?>"><i class="fas fa-undo-alt"></i></a>
                             <a href="supprimerDossier.php?id=<?=$dossier['idDossier']?>"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
