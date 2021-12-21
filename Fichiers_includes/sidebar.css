@@ -25,6 +25,7 @@ hr{
     font-weight: lighter;
     height: 100%;
     width: 80px;
+    margin-right: 10px;
     padding-top: 80px;
     background: linear-gradient(to top, #0853c4, #087fc4);
     /* #087fc4 #0853c4 */
@@ -143,6 +144,11 @@ button[type="reset"]:hover{
     border-collapse: collapse;
     width: calc(100vw - 120px);
     margin: 0 auto;
+
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
 }
 
 .table_title{
@@ -163,8 +169,19 @@ button[type="reset"]:hover{
 .rapport_table tbody td{
     padding: 5px 0;
     padding-left: 5px;
-    
     text-align: center;
+}
+.register_table tbody tr,
+.rapport_table tbody tr{
+    border-bottom: 1px solid #ddd;
+}
+.register_table tbody tr:nth-of-type(even),
+.rapport_table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+.register_table tbody tr:last-of-type,
+.rapport_table tbody tr:last-of-type{
+    border-bottom: 2px solid #041C32;
 }
 
 /* .register_table td,
@@ -175,7 +192,7 @@ button[type="reset"]:hover{
 
 .register_table tbody tr:hover,
 .rapport_table tbody tr:hover{
-    background-color: #d4d4d4;
+    color: #0853c4;
 }
 
 .register_table a{

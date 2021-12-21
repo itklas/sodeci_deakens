@@ -21,7 +21,7 @@ $data = $resultat->fetchAll();
     <title>Document</title>
 </head>
 <body>
-<h1>Les différents utilisateurs</h1>
+<h2 class='table_title'>Les différents utilisateurs</h2>
 <table class="register_table">
         <thead>
             <tr class="trtb">

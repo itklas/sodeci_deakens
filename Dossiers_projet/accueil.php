@@ -20,14 +20,15 @@ if(!isset($_SESSION['auth'])){
     <title>Accueil</title>
 </head>
 <body>
-    <div class="accueil">
+    <div class="register">
         <?php
-            include_once('../Fichiers_includes/side-bar.php');    
+        include_once('../Fichiers_includes/side-bar.php');    
         ?>
-        <?php
+        <div class="register_rigth">
+            <?php
             include_once('../Fichiers_includes/haut-bar.php');    
-        ?>
+            ?>
+        </div>
     </div>
-    
 </body>
 </html>

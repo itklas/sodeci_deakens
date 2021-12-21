@@ -68,7 +68,7 @@ if(isset($_POST['valider'])){
         <?php
         include_once('../Fichiers_includes/haut-bar.php');    
         ?>
-        <h1>Création d'utilisateur</h1>
+        <h2>Création d'utilisateur</h2>
         <form action="" method="post" class='register_form'>
             <div class='input_label_bloc'>
                 <label for="nomUtilisateur">Nom d'utilisateur</label>
