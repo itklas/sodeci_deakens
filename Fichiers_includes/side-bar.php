@@ -8,6 +8,7 @@
 </head>
 <body>
     <nav class="nav_bar">
+        <img src="../images/deakens_logo.png" alt="" width=60 heigth=60>
         <ul>
             <li><a href="../Dossiers_projet/accueil.php"><i class="fas fa-tachometer-alt"></i>Tableau de bord</a></li>
             <li><a href="../Dossiers_projet/dossier.php"><i class="far fa-edit"></i>Enregistrer un dossier</a></li>

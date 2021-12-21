@@ -42,29 +42,32 @@ if(isset($_POST['submit'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/deakens_logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
     <title>Page login</title>
 </head>
 <body>
-    
     <div class="login_page">
-        <div class="form-block">
-            <h2>eau plus</h2>
-            <span>page d'authentification</span>
-            <form action="" method="post" class="login_form">
-                <label for="pseudoUtilisateur">PSEUDO</label><br /><br />
-                <input id="pseudoUtilisateur" type="text" name="pseudoUtilisateur"><br />
-                <label for="motPasseUtilisateur">MOT DE PASSE</label><br /><br />
-                <input id="motPasseUtilisateur" type="password" name="motPasseUtilisateur"><br /><br />       
-                <input type="submit" name="submit" value="Se connecter">
-            </form>
+        <div class="login_card">
+            <div class="login_ulustration">
+                <!-- <img src="./images/sodeci.svg" alt="" class="illustration"> -->
+            </div>
+            <div class="form-block">
+                <img src="./images/deakens_logo.png" alt="" width=120 heigth=140>
+                <span>Authentification</span>
+                <form action="" method="post" class="login_form">
+                    <div class="login_form_group">
+                        <label for="pseudoUtilisateur">PSEUDO</label><sup>*</sup> <br />
+                        <input id="pseudoUtilisateur" type="text" name="pseudoUtilisateur" required>
+                    </div>
+                    <div class="login_form_group">
+                        <label for="motPasseUtilisateur">MOT DE PASSE</label><sup>*</sup><br />
+                        <input id="motPasseUtilisateur" type="password" name="motPasseUtilisateur" required>       
+                    </div>
+                    <input type="submit" name="submit" value="Se connecter">
+                </form>
+            </div>
         </div>
-        <section class="wave_section">
-            <div class="wave wave1"></div>
-            <div class="wave wave2"></div>
-            <div class="wave wave3"></div>
-            <div class="wave wave4"></div>
-        </section>
     </div>
 </body>
 </html>

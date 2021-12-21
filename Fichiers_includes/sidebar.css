@@ -20,16 +20,22 @@ hr{
 .register{
     display: flex;
 }
+.nav_bar{
+    background: linear-gradient(to top, #0853c4, #087fc4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 80px;
+}
+
+.nav_bar img{
+    margin: 20px 0px 70px 0px;
+}
 
 .nav_bar ul{
     font-weight: lighter;
-    height: 100%;
-    width: 80px;
     margin-right: 10px;
-    padding-top: 80px;
-    background: linear-gradient(to top, #0853c4, #087fc4);
-    /* #087fc4 #0853c4 */
-
 }
 .nav_bar ul li{
     list-style: none;
@@ -193,6 +199,7 @@ button[type="reset"]:hover{
 .register_table tbody tr:hover,
 .rapport_table tbody tr:hover{
     color: #0853c4;
+    font-weight: 500;
 }
 
 .register_table a{

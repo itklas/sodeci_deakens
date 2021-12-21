@@ -10,71 +10,79 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-/* .login_page{
-    position: relative;
-    width: 100%;
+.login_page{
+    background: linear-gradient(315deg, #0853c4, #087fc4);
     height: 100vh;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+
 }
-section .wave{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url('./images/wave.png');
-    background-size: 1000px 100px;
-} */
+
+.login_ulustration{
+    width: 50%;
+    background: no-repeat center/contain url('./images/sodeci.svg'), #fff;
+}
+
+.login_ulustration img{
+    object-fit: contain;
+}
+
+.login_card{
+    width: 60%;
+    height: 70vh;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid #fff;
+}
 
 .form-block{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+
     align-items: center;
-    height: 100vh;
-    width: 100%;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.5);
 }
 
-
-.form-block h2{
-    font-size: 25px;
-}
-.form-block > span{
-    margin-bottom: 10px;
+.form-block span{
+    font-weight: 600;
 }
 
-.form-block form{
-    display: block;
-    margin: 0 auto;
-    padding: 30px 0px;
-    width: 25%;
-    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.form-block label{
-    margin-left: 70px;
-}
-
-.form-block input{
-    display: block;
-    margin: 0 auto;
+.login_form input{
+    width: 300px;
     height: 40px;
-    width: 65%; 
-    outline: none;  
-}
-
-.form-block input[type=submit]{
-    display: block;
-    margin: 0 auto;
-    height: 40px;
-    width: 50%;  
-    font-size: 20px; 
-    color: #fff;
-    cursor: pointer;
-    background-color: #00A9FD;
+    font-size: 18px;
     border: none;
 }
 
-.form-block input[type=submit]:hover{
-    background-color: #1095D8;
+.login_form sup{
+    color: #ec6c02;
+}
+
+.login_form input[type="text"],
+.login_form input[type="password"]{
+    border-bottom: 2px solid #0853c4;
+    background-color: #f3f3f3;
+    padding-left: 10px;
+}
+
+.login_form input[type="submit"]{
+    background: linear-gradient(315deg, #0853c4, #087fc4);
+    color: #fff;
+    cursor: pointer;
+}
+
+.login_form input[type="submit"]:hover{
+    background: linear-gradient(-315deg, #0853c4, #087fc4);
+
+}
+
+.login_form_group{
+    margin: 10px 0;
 }
