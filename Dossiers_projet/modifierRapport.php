@@ -154,19 +154,15 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                 <div class='input_label_bloc'>
                     <label for="dateDeRealisation">Date de réalisation</label>
                     <input id="dateDeRealisation" type="date" name="dateDeRealisation" value="<?= $dateDeRealisation; ?>">
-                </div>
-                <!-- <div class='input_label_bloc'>
-                    <label for="dateDeTraitement">Date de traitement</label>
-                    <input id="dateDeTraitement" type="date" name="dateDeTraitement">
-                </div> -->
+                </div>               
                 <div class='input_label_bloc'>
                     <label for="paye">Paye</label>
                     <div>                        
                         <label for="oui">Oui</label>
-                        <input id="paye" type="radio" name="paye" value="oui" id="oui">            
+                        <input id="paye" type="radio" name="paye" value="oui" <?=($paye==='oui')?'checked':'';?> id="oui">            
                     
                         <label for="non">Non</label>
-                        <input id="paye" type="radio" name="paye" value="non" id="non">                        
+                        <input id="paye" type="radio" name="paye" value="non" <?=($paye==='non')?'checked':'';?> id="non">                        
                     </div>
                 </div>
                 <div class='input_label_bloc'>
