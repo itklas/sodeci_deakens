@@ -4,6 +4,7 @@ if(!isset($_SESSION['auth'])){
     header('Location: ../index.php');
     exit;
 }
+// require('recherche.php');
 // echo'<pre>';
 // print_r($_SESSION);
 // echo'</pre>';
@@ -30,13 +31,30 @@ if(!isset($_SESSION['auth'])){
             include_once('../Fichiers_includes/haut-bar.php');    
             ?>
             <div>
-                <form method="GET">
+                <form action="" name='recherche' method="GET">
                     <input type="search" name="search">
                     <button type="submit">Rechercher</button>
+                
+                
+                    <!-- <select name="par">
+                        <option value=""> Choisir un critère</option>
+                        <option value="year"> Par Année</option> 
+                        <option value="agent"> Agent d'operation</option>
+                    </select> -->
                 </form>
             </div>
+
+            <?php
+                // foreach ($dossiers as $key => $dossier) {
+                    // echo '<pre>';
+                    // echo $key.'°)';
+                    // print_r($dossier);
+                    // echo '</pre>';
+                // }
+            ?>
         </div>
 
     </div>
+    
 </body>
 </html>

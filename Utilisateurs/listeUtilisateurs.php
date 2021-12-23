@@ -1,6 +1,6 @@
 <?php
 include_once('../connexion/connexion.php');
-$resultat = $connexion->prepare("SELECT utilisateur.idUtilisateur, nomUtilisateur, prenomUser, pseudoUtilisateur, motPasseUtilisateur, typeUtilisateur, COUNT(idDossier) AS nb FROM utilisateur LEFT JOIN dossier ON utilisateur.idUtilisateur = dossier.idUtilisateur GROUP BY idUtilisateur, nomUtilisateur, prenomUser, pseudoUtilisateur, motPasseUtilisateur, typeUtilisateur ORDER BY idUtilisateur ASC");
+$resultat = $connexion->prepare("SELECT utilisateur.idUtilisateur, nomUtilisateur, prenomUser, pseudoUtilisateur, motPasseUtilisateur, typeUtilisateur, lockUser, COUNT(idDossier) AS nb FROM utilisateur LEFT JOIN dossier ON utilisateur.idUtilisateur = dossier.idUtilisateur GROUP BY idUtilisateur, nomUtilisateur, prenomUser, pseudoUtilisateur, motPasseUtilisateur, typeUtilisateur ORDER BY idUtilisateur ASC");
 $resultat->execute(array());
 $data = $resultat->fetchAll();   
  
@@ -58,10 +58,12 @@ $data = $resultat->fetchAll();
                 </td>    
 				<td><?php echo $donnee['nb']?></td>
                 <td style='text-align:left;'>
-                    <a href="modifierUtilisateur.php?id=<?=$donnee['idUtilisateur']?>">
+                    <a title='modifier utilisateur' href="modifierUtilisateur.php?id=<?=$donnee['idUtilisateur']?>">
                     <i class="fas fa-undo-alt"> </i>
                     </a>
-                    <?=($donnee['nb']>0)?'':'<a href="supprimerUtilisateur.php?id='.$donnee['idUtilisateur'].'"><i class="fas fa-trash"></i></a>';?> 
+                    <?=($donnee['nb']>0)?'':'<a href="supprimerUtilisateur.php?id='.$donnee['idUtilisateur'].'"><i class="fas fa-trash"></i></a>';?>
+                    
+                    <a title='bloquer utilisateur' href='bloquerUtilisateur.php?id=<?=$donnee['idUtilisateur']?>'> <?=($donnee['lockUser']==0)?'Debloquer':'Bloquer';?> </a>
                 </td>
             </tr>
 			<?php endif;?>

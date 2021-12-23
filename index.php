@@ -13,16 +13,22 @@ if(isset($_POST['submit'])){
         if($verifieSiPseudoUtilisateurExiste->rowCount() > 0){
             $dataUtilisateur = $verifieSiPseudoUtilisateurExiste->fetch();
             if($dataUtilisateur['motPasseUtilisateur'] == $motPasseUtilisateur){
-                
-                $_SESSION['auth'] = true;
-                $_SESSION['idUtilisateur'] = $dataUtilisateur['idUtilisateur'];
-                $_SESSION['nomUtilisateur'] = $dataUtilisateur['nomUtilisateur'];
-                $_SESSION['prenomUser'] = $dataUtilisateur['prenomUser'];
-                $_SESSION['pseudoUtilisateur'] = $dataUtilisateur['pseudoUtilisateur'];
-                $_SESSION['typeUtilisateur'] = $dataUtilisateur['typeUtilisateur'];
+                if ($dataUtilisateur['lockUser'] == 0) {
+                    header('Location: index.php');
+                    exit();
+                } else {
+                    $_SESSION['auth'] = true;
+                    $_SESSION['idUtilisateur'] = $dataUtilisateur['idUtilisateur'];
+                    $_SESSION['nomUtilisateur'] = $dataUtilisateur['nomUtilisateur'];
+                    $_SESSION['prenomUser'] = $dataUtilisateur['prenomUser'];
+                    $_SESSION['pseudoUtilisateur'] = $dataUtilisateur['pseudoUtilisateur'];
+                    $_SESSION['typeUtilisateur'] = $dataUtilisateur['typeUtilisateur'];
 
-                header('Location: Dossiers_projet/accueil.php');
-                exit();
+                    header('Location: Dossiers_projet/accueil.php');
+                    exit();
+                }
+                
+                
             }else{
                 print('Votre mot de passe est incorrect');
             }
