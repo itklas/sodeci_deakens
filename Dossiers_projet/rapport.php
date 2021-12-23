@@ -28,7 +28,7 @@ $users = $resultat->fetchAll();
  $dossiers = $resultat->fetchAll();
 
  // debut dossiers traite
- $resultat = $connexion->prepare("SELECT dossier.idDossier, numeroAgence, nomAgence, projet.nomProjet, concat('nomClient', ' ', 'prenomClient') AS nomprenoms,  demandeSodeci, polices, codeSecteur, montant, paye, traverseeBitumeCiment, lineaireBranchement, conduiteDeBranchement, dateDeRealisation, dateDeTraitement, observations, traiterPar, poserPar, utilisateur.nomUtilisateur AS nomUtilisateur, utilisateur.prenomUser AS prenomUser FROM dossier JOIN agence ON dossier.idAgence  = agence.idAgence JOIN projet ON dossier.idProjet = projet.idProjet JOIN utilisateur ON utilisateur.idUtilisateur = dossier.idUtilisateur WHERE (montant IS NOT NULL AND paye IS NOT NULL AND traverseeBitumeCiment IS NOT NULL AND lineaireBranchement IS NOT NULL AND conduiteDeBranchement IS NOT NULL AND dateDeRealisation IS NOT NULL AND dateDeTraitement IS NOT NULL AND demandeSodeci IS NOT NULL AND polices IS NOT NULL AND codeSecteur IS NOT NULL) ORDER BY idDossier ASC");
+ $resultat = $connexion->prepare("SELECT dossier.idDossier, numeroAgence, nomAgence, projet.nomProjet, concat(nomClient, ' ', prenomClient) AS nomprenoms,  demandeSodeci, polices, codeSecteur, montant, paye, traverseeBitumeCiment, lineaireBranchement, conduiteDeBranchement, dateDeRealisation, dateDeTraitement, observations, traiterPar, poserPar, utilisateur.nomUtilisateur AS nomUtilisateur, utilisateur.prenomUser AS prenomUser FROM dossier JOIN agence ON dossier.idAgence  = agence.idAgence JOIN projet ON dossier.idProjet = projet.idProjet JOIN utilisateur ON utilisateur.idUtilisateur = dossier.idUtilisateur WHERE (montant IS NOT NULL AND paye IS NOT NULL AND traverseeBitumeCiment IS NOT NULL AND lineaireBranchement IS NOT NULL AND conduiteDeBranchement IS NOT NULL AND dateDeRealisation IS NOT NULL AND dateDeTraitement IS NOT NULL AND demandeSodeci IS NOT NULL AND polices IS NOT NULL AND codeSecteur IS NOT NULL) ORDER BY idDossier ASC");
  $resultat->execute();
  $dossierstraites = $resultat->fetchAll();
  //fin dossiers traités
@@ -85,7 +85,7 @@ $users = $resultat->fetchAll();
                             <td><?php echo $dossier['contactClient']?></td>
                             <td><?php echo $dossier['dateReception']?></td>
                             <td><?php echo $dossier['nomUtilisateur'].' '.$dossier['prenomUser']?></td>
-                            <td><a href="ajouterRapport.php?id=<?= $dossier['idDossier']; ?>"><i class="fas fa-clipboard"></i></a></td>
+                            <td><a title="Ajouter rapport" href="ajouterRapport.php?id=<?= $dossier['idDossier']; ?>"><i class="fas fa-clipboard"></i></a></td>
                         </tr>
                     <?php endforeach;?>
                     </tbody>
@@ -97,7 +97,7 @@ $users = $resultat->fetchAll();
                 <thead>
                     <tr>
                         <th>N° Dossier(Nom & prenoms)</th>
-                        <th>Montant</th>
+                        <th>Montant(Fcfa)</th>
                         <th>Paye</th>
                         <th>Demande SODECI / Polices / Code secteur</th>
                         <th>Traversée-Bitume-Ciment</th>
@@ -107,6 +107,7 @@ $users = $resultat->fetchAll();
                         <th>Date de traitement</th>
                         <th>Observation</th>
                         <th>Traité Par / Posé Par</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -132,8 +133,9 @@ $users = $resultat->fetchAll();
                         <td><?php echo $dossierstraite['dateDeTraitement']?></td>
                         <td><?php echo $dossierstraite['observations']?></td>
                         <td>
-                            <?php echo $dossierstraite['traiterPar'].' / '.$dossierstraite['poserPar']?>
+                        <?php echo $dossierstraite['nomUtilisateur'].' '.$dossierstraite['prenomUser'].' / '.$dossierstraite['poserPar']?>
                         </td>
+                        <td><a title="Modifier rapport" href="modifierRapport.php?id=<?= $dossierstraite['idDossier']; ?>"><i class="fas fa-undo-alt"></i></i></a></td>
                     </tr>
                 <?php endforeach;?>
                 </tbody>
