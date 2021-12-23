@@ -97,7 +97,7 @@ if(isset($_POST['valider'])){
             </div>
             <div class='input_label_bloc'>
                 <label for="contactUtilisateur">Contact utilisateur</label>
-                <input id="contactUtilisateur" type="text" name="contactUtilisateur"><br><br>
+                <input id="contactUtilisateur" type="text" name="contactUtilisateur">
             </div>
             <div>
                 <button type="submit" name="valider">Enregistrer</button>
