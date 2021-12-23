@@ -168,7 +168,9 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                 <div>
                     <button type="submit" name="valider">Ajouter rapport</button>
                 </div>
-            </form>                        
+            </form>
+            
+        </div>
     </div>
 </body>
 </html>

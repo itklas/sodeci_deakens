@@ -21,6 +21,5 @@ $prenomUser = $_SESSION['prenomUser'];
             <p>En ligne</p>
         </div>
     </div>
-    <hr>
 </body>
 </html>
