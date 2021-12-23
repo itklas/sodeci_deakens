@@ -27,11 +27,7 @@ $users = $resultat->fetchAll();
  $resultat->execute();
  $dossiers = $resultat->fetchAll();
 
- // debut dossiers traite
- $resultat = $connexion->prepare("SELECT dossier.idDossier, numeroAgence, nomAgence, projet.nomProjet, concat('nomClient', ' ', 'prenomClient') AS nomprenoms,  demandeSodeci, polices, codeSecteur, montant, paye, traverseeBitumeCiment, lineaireBranchement, conduiteDeBranchement, dateDeRealisation, dateDeTraitement, observations, traiterPar, poserPar, utilisateur.nomUtilisateur AS nomUtilisateur, utilisateur.prenomUser AS prenomUser FROM dossier JOIN agence ON dossier.idAgence  = agence.idAgence JOIN projet ON dossier.idProjet = projet.idProjet JOIN utilisateur ON utilisateur.idUtilisateur = dossier.idUtilisateur WHERE (montant IS NOT NULL AND paye IS NOT NULL AND traverseeBitumeCiment IS NOT NULL AND lineaireBranchement IS NOT NULL AND conduiteDeBranchement IS NOT NULL AND dateDeRealisation IS NOT NULL AND dateDeTraitement IS NOT NULL AND demandeSodeci IS NOT NULL AND polices IS NOT NULL AND codeSecteur IS NOT NULL) ORDER BY idDossier ASC");
- $resultat->execute();
- $dossierstraites = $resultat->fetchAll();
- //fin dossiers traités
+ 
 
 if(isset($_GET['id']) AND !empty($_GET['id'])){
     $getDossier = (int) htmlentities(trim($_GET['id']));
@@ -172,76 +168,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                 <div>
                     <button type="submit" name="valider">Ajouter rapport</button>
                 </div>
-            </form>
-            
-            <h2 class="table_title">Différrents dossiers enregistrés non traités</h2>
-                <table class="rapport_table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>N° Dossier</th>
-                            <th>Nom et Prenoms</th>
-                            <th>Quartier / Adresse</th>
-                            <th>Contact</th>
-                            <th>Date de réception</th>
-                            <th>Enregistrer par</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php foreach($dossiers as $dossier):?>
-                        <tr>
-                            <td><?php echo $dossier['idDossier']?></td>
-                            <td><?php echo $dossier['numeroAgence'].'-'.$dossier['idDossier'].'-'.$dossier['nomProjet']?></td>
-                            <td><?php echo $dossier['nomClient'].' '.$dossier['prenomClient']?></td>
-                            <td><?php echo $dossier['quartierClient'].' / '.$dossier['adresseGeographieClient']?></td>
-                            <td><?php echo $dossier['contactClient']?></td>
-                            <td><?php echo $dossier['dateReception']?></td>
-                            <td><?php echo $dossier['nomUtilisateur'].' '.$dossier['prenomUser']?></td>
-                            <td><a href="ajouterRapport.php?id=<?= $dossier['idDossier']; ?>">Rapport</a></td>
-                        </tr>
-                    <?php endforeach;?>
-                    </tbody>
-                    <tfoot></tfoot>
-                </table>
-                <br><br>
-            <h2 class="table_title">Différrents rappots enregistrés</h2>
-            <table class="register_table">
-                <thead>
-                    <tr>
-                        <th>N° Dossier(Nom & prenoms)</th>
-                        <th>Montant</th>
-                        <th>Paye</th>
-                        <th>Demande SODECI | Polices | Code secteur</th>
-                        <th>Traversée-Bitume-Ciment</th>
-                        <th>Linéaire de branchement</th>
-                        <th>Conduite de Branchement</th>
-                        <th>Date de réalisation</th>
-                        <th>Date de traitement</th>
-                        <th>Observation</th>
-                        <th>Traité Par | Posé Par</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php foreach($dossierstraites as $dossierstraite):?>
-                    <tr>
-                        <td><?php echo $dossierstraite['numeroAgence'].'-'.$dossierstraite['idDossier'].'-'.$dossierstraite['nomProjet'].'('.$dossierstraite['nomprenoms'].')';?></td>
-                        <td><?php echo $dossierstraite['montant']?> </td>
-                        <td> <?php echo $dossierstraite['paye']?></td>
-                        <td><?php echo $dossierstraite['demandeSodeci'].' | '.$dossierstraite['polices'].' | '.$dossierstraite['codeSecteur']?></td>
-                        <td><?php echo $dossierstraite['traverseeBitumeCiment']?></td>
-                        <td><?php echo $dossierstraite['lineaireBranchement']?></td>
-                        <td><?php echo $dossierstraite['conduiteDeBranchement']?></td>
-                        <td><?php echo $dossierstraite['dateDeRealisation']?></td>
-                        <td><?php echo $dossierstraite['dateDeTraitement']?></td>
-                        <td><?php echo $dossierstraite['observations']?></td>
-                        <td><?php echo $dossierstraite['traiterPar'].' |'.$dossierstraite['poserPar']?></td>
-                    </tr>
-                <?php endforeach;?>
-                </tbody>
-                <tfoot></tfoot>
-            </table> 
-        </div>
+            </form>                        
     </div>
 </body>
 </html>
