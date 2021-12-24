@@ -29,7 +29,14 @@ if(!isset($_SESSION['auth'])){
             <?php
             include_once('../Fichiers_includes/haut-bar.php');    
             ?>
+            <div>
+                <form method="GET">
+                    <input type="search" name="search">
+                    <button type="submit">Rechercher</button>
+                </form>
+            </div>
         </div>
+
     </div>
 </body>
 </html>

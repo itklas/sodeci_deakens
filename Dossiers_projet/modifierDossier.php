@@ -52,9 +52,12 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
             $adresseGeographieClient = htmlspecialchars($_POST['adresseGeographieClient']);
             $contactClient = htmlspecialchars($_POST['contactClient']);
             $dateReception = htmlspecialchars($_POST['dateReception']);
+            $idProjet=htmlspecialchars($_POST['nomProjet']);
+            $idAgence = htmlspecialchars($_POST['numeroAgence']);
+            $idUtilisateur = $_SESSION['idUtilisateur'];
                         
-            $updateDossier = $connexion->prepare("UPDATE dossier SET nomClient = ?, prenomClient = ?, adresseGeographieClient = ?, quartierClient = ?, typePieceClient = ?, numeroPieceClient = ?, contactClient = ?, dateReception = ?,  WHERE idDossier = $getIdDossier"); 
-            $updateDossier->execute(array($nomClient, $prenomClient, $adresseGeographieClient, $quartierClient, $typePieceClient, $numeroPieceClient, $contactClient, $dateReception, $getIdDossier));
+            $updateDossier = $connexion->prepare("UPDATE dossier SET nomClient = ?, prenomClient = ?, adresseGeographieClient = ?, quartierClient = ?, typePieceClient = ?, numeroPieceClient = ?, contactClient = ?, dateReception = ?, idUtilisateur = ?, idAgence = ?, idProjet = ? WHERE idDossier = $getIdDossier"); 
+            $updateDossier->execute(array($nomClient, $prenomClient, $adresseGeographieClient, $quartierClient, $typePieceClient, $numeroPieceClient, $contactClient, $dateReception, $idUtilisateur, $idAgence, $idProjet, $getIdDossier));
             header('Location: dossier.php');
         }
     }else{
