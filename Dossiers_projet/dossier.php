@@ -124,7 +124,7 @@ $users = $resultat->fetchAll();
                     <input id="dateReception" type="date" name="dateReception">
                 </div>
                 <div>
-                    <button type="submit" name="valider">Enregistrer</button>
+                    <button type="submit" name="valider"><i class="fa fa-save"></i> Enregistrer</button>
                     <button type="reset" name="valider">Annuler</button>
                 </div>
                 <!-- <input type="submit" name="submit" value="Enregistrer"> -->
@@ -154,13 +154,13 @@ $users = $resultat->fetchAll();
                         <td><?php echo $dossier['numeroAgence'].'-'.$dossier['idDossier'].'-'.$dossier['nomProjet']?></td>
                         <td><?php echo $dossier['nomClient'].' '.$dossier['prenomClient']?></td>
                         <td><?php echo $dossier['quartierClient'].' / '.$dossier['adresseGeographieClient']?></td>
-                        <td><?php echo $dossier['numeroPieceClient']?></td>
+                        <td><?php echo $dossier['numeroPieceClient'].' ('.$dossier['typePieceClient'].')'?></td>
                         <td><?php echo $dossier['contactClient']?></td>
-                        <td><?php echo $dossier['dateReception']?></td>
+                        <td><?php echo date('d-m-Y',strtotime($dossier['dateReception']))?></td>
                         <td><?php echo $dossier['nomUtilisateur'].' '.$dossier['prenomUser']?></td>
                         <!-- <td><?php //echo $dossier['lname'].' '.$dossier['fname']?></td>           -->
                         <td>
-                            <a href="modifierDossier.php?id=<?=$dossier['idDossier']?>"><i class="fas fa-undo-alt"></i></a>
+                            <a title="Modifier un dossier" href="modifierDossier.php?id=<?=$dossier['idDossier']?>"><i class="fas fa-file-edit"></i></a>
                             <a href="supprimerDossier.php?id=<?=$dossier['idDossier']?>"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>

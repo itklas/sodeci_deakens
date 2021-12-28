@@ -28,7 +28,7 @@ $users = $resultat->fetchAll();
  $dossiers = $resultat->fetchAll();
 
  // debut dossiers traite
- $resultat = $connexion->prepare("SELECT dossier.idDossier, numeroAgence, nomAgence, projet.nomProjet, concat('nomClient', ' ', 'prenomClient') AS nomprenoms,  demandeSodeci, polices, codeSecteur, montant, paye, traverseeBitumeCiment, lineaireBranchement, conduiteDeBranchement, dateDeRealisation, dateDeTraitement, observations, traiterPar, poserPar, utilisateur.nomUtilisateur AS nomUtilisateur, utilisateur.prenomUser AS prenomUser FROM dossier JOIN agence ON dossier.idAgence  = agence.idAgence JOIN projet ON dossier.idProjet = projet.idProjet JOIN utilisateur ON utilisateur.idUtilisateur = dossier.idUtilisateur WHERE (montant IS NOT NULL AND paye IS NOT NULL AND traverseeBitumeCiment IS NOT NULL AND lineaireBranchement IS NOT NULL AND conduiteDeBranchement IS NOT NULL AND dateDeRealisation IS NOT NULL AND dateDeTraitement IS NOT NULL AND demandeSodeci IS NOT NULL AND polices IS NOT NULL AND codeSecteur IS NOT NULL) ORDER BY idDossier ASC");
+ $resultat = $connexion->prepare("SELECT dossier.idDossier, numeroAgence, nomAgence, projet.nomProjet, concat(nomClient, ' ', prenomClient) AS nomprenoms,  demandeSodeci, polices, codeSecteur, montant, paye, traverseeBitumeCiment, lineaireBranchement, conduiteDeBranchement, dateDeRealisation, dateDeTraitement, observations, traiterPar, poserPar, utilisateur.nomUtilisateur AS nomUtilisateur, utilisateur.prenomUser AS prenomUser FROM dossier JOIN agence ON dossier.idAgence  = agence.idAgence JOIN projet ON dossier.idProjet = projet.idProjet JOIN utilisateur ON utilisateur.idUtilisateur = traiterPar WHERE (montant IS NOT NULL AND paye IS NOT NULL AND traverseeBitumeCiment IS NOT NULL AND lineaireBranchement IS NOT NULL AND conduiteDeBranchement IS NOT NULL AND dateDeRealisation IS NOT NULL AND dateDeTraitement IS NOT NULL AND demandeSodeci IS NOT NULL AND polices IS NOT NULL AND codeSecteur IS NOT NULL) ORDER BY idDossier ASC");
  $resultat->execute();
  $dossierstraites = $resultat->fetchAll();
  //fin dossiers traités
@@ -61,7 +61,7 @@ $users = $resultat->fetchAll();
             ?>
 
             
-            <h2 class="table_title">Différrents dossiers enregistrés non traités</h2>
+            <h2 class="table_title">Différrents dossiers traités</h2>
                 <table class="rapport_table">
                     <thead>
                         <tr>
@@ -132,7 +132,7 @@ $users = $resultat->fetchAll();
                         <td><?php echo $dossierstraite['dateDeTraitement']?></td>
                         <td><?php echo $dossierstraite['observations']?></td>
                         <td>
-                            <?php echo $dossierstraite['traiterPar'].' |'.$dossierstraite['poserPar']?>
+                            <?php echo $dossierstraite['nomUtilisateur'].' '.$dossierstraite['prenomUser'].' | '.$dossierstraite['poserPar']?>
                         </td>
                     </tr>
                 <?php endforeach;?>
