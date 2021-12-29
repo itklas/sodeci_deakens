@@ -67,6 +67,7 @@ body{
 
 .login_form input[type="text"],
 .login_form input[type="password"]{
+    outline: none;
     border-bottom: 2px solid #0853c4;
     background-color: #f3f3f3;
     padding-left: 10px;

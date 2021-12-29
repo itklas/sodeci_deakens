@@ -30,12 +30,14 @@ hr{
 }
 
 .nav_bar img{
-    margin: 20px 0px 70px 0px;
+    margin: 20px 0px 30px 0px;
 }
 
 .nav_bar ul{
     font-weight: lighter;
-    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .nav_bar ul li{
     list-style: none;
@@ -44,10 +46,10 @@ hr{
 .nav_bar ul li a{
     text-decoration: none;
     color: inherit;
-    font-size: 13px;
+    font-size: 12px;
     text-align: center;
     padding: .5em;
-    margin: 10px 0;
+    margin-bottom: 7px;
     color: #fff;
     border-radius: 5px;
 
@@ -62,15 +64,70 @@ hr{
 }
 
 .nav_bar .fas, .far{
-    font-size: 28px;
+    font-size: 24px;
 }
 
 
 .content-right{
     display: flex;
-    width: calc(100vw - 140px);
+    width: calc(100vw - 80px);
+
     justify-content: space-between;
+    background-color: #041C32;
+    color: #fff;
     padding: 10px 20px;
+}
+
+/* dashboard */
+
+.dashbord{
+    width: 100%;
+    margin: 20px 10px;
+}
+
+.darh_top{
+    display: flex;
+}
+
+.darh_top button{
+    padding: .5em 1em;
+    cursor: pointer;
+}
+
+.search_form{
+    width: 600px;
+    height: 35px;
+
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-right: 10px;
+}
+
+.searh_input{
+    width: 80%;
+    height: 100%;
+    border: none;
+    outline: none;
+
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+.search_btn{
+    border: none;
+    height: 100%;
+    width: 20%;
+
+    background: linear-gradient(315deg, #0853c4, #087fc4);
+    color: #fff;
+
+    cursor: pointer;
+}
+.search_btn:hover{
+    background: linear-gradient(-315deg, #0853c4, #087fc4);
 }
 
 /* register  */
@@ -136,9 +193,9 @@ button[type="reset"]:hover{
     background-color: #960511;
 }
 
-.register_rigth > div{
+/* .register_rigth > div{
     margin: 10px 5px;
-}
+} */
 
 .register_rigth h2{
     font-size: 20px;
@@ -149,7 +206,7 @@ button[type="reset"]:hover{
 .rapport_table{
     border-collapse: collapse;
     width: calc(100vw - 120px);
-    margin: 0 auto;
+    margin-left: 10px;
 
     border-radius: 5px 5px 0 0;
     overflow: hidden;
@@ -202,13 +259,14 @@ button[type="reset"]:hover{
     font-weight: 500;
 }
 
-.register_table a{
+.register_table a,
+.rapport_table a{
     text-decoration: none;
-    color: black;
+    color: #041C32;
 }
 
 .fas{
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin: 0 5px;
 }
 .fa-undo-alt{
