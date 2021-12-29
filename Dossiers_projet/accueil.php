@@ -29,11 +29,15 @@ if(!isset($_SESSION['auth'])){
             <?php
             include_once('../Fichiers_includes/haut-bar.php');    
             ?>
-            <div>
-                <form method="GET">
-                    <input type="search" name="search">
-                    <button type="submit">Rechercher</button>
-                </form>
+            <div class='dashbord'>
+                <div class="darh_top">
+                    <form method="GET" class="search_form">
+                        <input type="search" name="search" class="searh_input" placeholder="N°Dossier, Nom Dossier, Nom Utilisateur" required>
+                        <input type="submit" class="search_btn" value="Rechercher"
+                        >
+                    </form>
+                    <button><i class="fas fa-print"></i></button>
+                </div>
             </div>
         </div>
 

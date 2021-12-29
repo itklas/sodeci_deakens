@@ -195,7 +195,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                         <td><?php echo $dossier['dateReception']?></td>
                         <td><?php echo $dossier['nomUtilisateur'].' '.$dossier['prenomUser']?></td>
                         <!-- <td><?php //echo $dossier['lname'].' '.$dossier['fname']?></td> -->
-                        <td><a href="ajouterRapport.php?id=<?= $dossier['idDossier']; ?>">Ajouter un rapport</a></td>
+                        <td><a href="ajouterRapport.php?id=<?= $dossier['idDossier']; ?>"><i class="fas fa-clipboard"></i></a></td>
                     </tr>
                 <?php endforeach;?>
                 </tbody>
@@ -239,7 +239,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                         <td><?php echo $dossier['dateDeTraitement']?></td>
                         <td><?php echo $dossier['observation']?></td>
                         <!-- <td><?php //echo $dossier['lname'].' '.$dossier['fname']?></td>           -->
-                        <td><a href="modifierRapport.php?id=<?= $dossier['idDossier']; ?>">Modifier rapport</a></td>
+                        <td><a href="modifierRapport.php?id=<?= $dossier['idDossier']; ?>"><i class="fas fa-edit"></i></a></td>
                     </tr>
                 <?php endforeach;?>
                 </tbody>

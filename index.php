@@ -58,7 +58,7 @@ if(isset($_POST['submit'])){
                 <form action="" method="post" class="login_form">
                     <div class="login_form_group">
                         <label for="pseudoUtilisateur">PSEUDO</label><sup>*</sup> <br />
-                        <input id="pseudoUtilisateur" type="text" name="pseudoUtilisateur" required>
+                        <input id="pseudoUtilisateur" type="text" name="pseudoUtilisateur" autocomplete="off" required>
                     </div>
                     <div class="login_form_group">
                         <label for="motPasseUtilisateur">MOT DE PASSE</label><sup>*</sup><br />
