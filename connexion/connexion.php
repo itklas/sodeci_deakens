@@ -2,7 +2,7 @@
 @session_start();
 $serveur = "localhost";
 $login = "root";
-$pass = "Mysql";
+$pass = "root";
 $base = "sodeci_deakens";
 try{
     $connexion = new PDO('mysql:host=' .$serveur . ';dbname=' . $base, $login, $pass);
