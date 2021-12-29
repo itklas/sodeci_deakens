@@ -4,6 +4,7 @@ if(!isset($_SESSION['auth'])){
     header('Location: ../index.php');
     exit;
 }
+// require('recherche.php');
 // echo'<pre>';
 // print_r($_SESSION);
 // echo'</pre>';
@@ -29,6 +30,7 @@ if(!isset($_SESSION['auth'])){
             <?php
             include_once('../Fichiers_includes/haut-bar.php');    
             ?>
+
             <div class='dashbord'>
                 <div class="darh_top">
                     <form method="GET" class="search_form">
@@ -39,8 +41,18 @@ if(!isset($_SESSION['auth'])){
                     <button><i class="fas fa-print"></i></button>
                 </div>
             </div>
+
+            <?php
+                // foreach ($dossiers as $key => $dossier) {
+                    // echo '<pre>';
+                    // echo $key.'°)';
+                    // print_r($dossier);
+                    // echo '</pre>';
+                // }
+            ?>
         </div>
 
     </div>
+    
 </body>
 </html>

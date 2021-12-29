@@ -1,8 +1,8 @@
 <?php
-session_start();
+@session_start();
 $serveur = "localhost";
 $login = "root";
-$pass = "root";
+$pass = "Mysql";
 $base = "sodeci_deakens";
 try{
     $connexion = new PDO('mysql:host=' .$serveur . ';dbname=' . $base, $login, $pass);

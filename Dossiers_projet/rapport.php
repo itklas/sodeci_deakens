@@ -19,7 +19,7 @@ $users = $resultat->fetchAll();
  $resultat->execute();
  $projets = $resultat->fetchAll();
 //
- $resultat = $connexion->prepare("SELECT dossier.idDossier, numeroAgence, nomAgence, projet.nomProjet, nomClient, prenomClient, adresseGeographieClient, quartierClient, typePieceClient, numeroPieceClient, contactClient, dateReception, utilisateur.nomUtilisateur AS nomUtilisateur, utilisateur.prenomUser AS prenomUser FROM dossier JOIN agence ON dossier.idAgence  = agence.idAgence JOIN projet ON dossier.idProjet = projet.idProjet JOIN utilisateur ON utilisateur.idUtilisateur = dossier.idUtilisateur ORDER BY idDossier ASC");
+ $resultat = $connexion->prepare("SELECT dossier.idDossier, numeroAgence, nomAgence, projet.nomProjet, nomClient, prenomClient, adresseGeographieClient, quartierClient, typePieceClient, numeroPieceClient, contactClient, dateReception, utilisateur.nomUtilisateur AS nomUtilisateur, utilisateur.prenomUser AS prenomUser FROM dossier JOIN agence ON dossier.idAgence  = agence.idAgence JOIN projet ON dossier.idProjet = projet.idProjet JOIN utilisateur ON utilisateur.idUtilisateur = dossier.idUtilisateur WHERE (montant is null AND paye is null AND demandeSodeci is null AND polices is null AND codeSecteur is null AND traverseeBitumeCiment is null AND conduiteDeBranchement is null AND lineaireBranchement is null AND observations is null AND poserPar is null AND traiterPar is null AND dateDeRealisation is null AND dateDeTraitement is null) ORDER BY idDossier ASC");
  $resultat->execute();
  $dossiers = $resultat->fetchAll();
 ?>
@@ -47,7 +47,7 @@ $users = $resultat->fetchAll();
             include_once('../Fichiers_includes/haut-bar.php');    
             ?>
             <div class="">  
-                <h2 class="table_title">Différrents dossiers enregistrés</h2>
+                <h2 class="table_title">Différrents dossiers enregistrés non traités</h2>
                 <table class="rapport_table">
                     <thead>
                         <tr>
