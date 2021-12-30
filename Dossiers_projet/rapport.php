@@ -99,14 +99,14 @@ $users = $resultat->fetchAll();
                         <th>N° Dossier(Nom & prenoms)</th>
                         <th>Montant</th>
                         <th>Paye</th>
-                        <th>Demande SODECI | Polices | Code secteur</th>
+                        <th>Demande SODECI / Polices / Code secteur</th>
                         <th>Traversée-Bitume-Ciment</th>
                         <th>Linéaire de branchement</th>
                         <th>Conduite de Branchement</th>
                         <th>Date de réalisation</th>
                         <th>Date de traitement</th>
                         <th>Observation</th>
-                        <th>Traité Par | Posé Par</th>
+                        <th>Traité Par / Posé Par</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -115,7 +115,7 @@ $users = $resultat->fetchAll();
                         <td><?php echo $dossierstraite['numeroAgence'].'-'.$dossierstraite['idDossier'].'-'.$dossierstraite['nomProjet'].'('.$dossierstraite['nomprenoms'].')';?></td>
                         <td><?php echo $dossierstraite['montant']?> </td>
                         <td> <?php echo $dossierstraite['paye']?></td>
-                        <td><?php echo $dossierstraite['demandeSodeci'].' | '.$dossierstraite['polices'].' | '.$dossierstraite['codeSecteur']?></td>
+                        <td><?php echo $dossierstraite['demandeSodeci'].' / '.$dossierstraite['polices'].' / '.$dossierstraite['codeSecteur']?></td>
                         <td>
                         <?php if($dossierstraite['traverseeBitumeCiment']==1){
                                     echo 'Traversee';
@@ -132,7 +132,7 @@ $users = $resultat->fetchAll();
                         <td><?php echo $dossierstraite['dateDeTraitement']?></td>
                         <td><?php echo $dossierstraite['observations']?></td>
                         <td>
-                            <?php echo $dossierstraite['traiterPar'].' |'.$dossierstraite['poserPar']?>
+                            <?php echo $dossierstraite['traiterPar'].' / '.$dossierstraite['poserPar']?>
                         </td>
                     </tr>
                 <?php endforeach;?>

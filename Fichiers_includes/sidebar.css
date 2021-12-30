@@ -220,7 +220,7 @@ button[type="reset"]:hover{
 
 .register_table tr,
 .rapport_table tr{
-    font-size: 14px;
+    font-size: 11px;
 }
 .register_table thead th,
 .rapport_table thead th{
@@ -250,7 +250,6 @@ button[type="reset"]:hover{
 /* .register_table td,
 .rapport_table td{
     min-width: 20px;
-
 } */
 
 .register_table tbody tr:hover,

@@ -32,6 +32,7 @@ $data = $resultat->fetchAll();
                 <th>Contact</th>
                 <th>Type utilisateur</th>
                 <th>Nombre de dossiers</th>
+                <th>Status</th>
                 <th>Actions</th>
                 
             </tr>
@@ -58,12 +59,15 @@ $data = $resultat->fetchAll();
                 </td>    
 				<td><?php echo $donnee['nb']?></td>
                 <td style='text-align:left;'>
+                    
+                    <a title='bloquer utilisateur' href='bloquerUtilisateur.php?id=<?=$donnee['idUtilisateur']?>'> <?=($donnee['lockUser']==0)?'Debloquer':'Bloquer';?> </a>
+                </td>
+                <td style='text-align:left;'>
                     <a title='modifier utilisateur' href="modifierUtilisateur.php?id=<?=$donnee['idUtilisateur']?>">
                     <i class="fas fa-undo-alt"> </i>
                     </a>
                     <?=($donnee['nb']>0)?'':'<a href="supprimerUtilisateur.php?id='.$donnee['idUtilisateur'].'"><i class="fas fa-trash"></i></a>';?>
-                    
-                    <a title='bloquer utilisateur' href='bloquerUtilisateur.php?id=<?=$donnee['idUtilisateur']?>'> <?=($donnee['lockUser']==0)?'Debloquer':'Bloquer';?> </a>
+
                 </td>
             </tr>
 			<?php endif;?>
