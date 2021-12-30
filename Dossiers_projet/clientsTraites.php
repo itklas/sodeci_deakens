@@ -85,7 +85,7 @@ $users = $resultat->fetchAll();
                             <td><?php echo $dossier['contactClient']?></td>
                             <td><?php echo $dossier['dateReception']?></td>
                             <td><?php echo $dossier['nomUtilisateur'].' '.$dossier['prenomUser']?></td>
-                            <td><a href="ajouterRapport.php?id=<?= $dossier['idDossier']; ?>"><i class="fas fa-clipboard"></i></a></td>
+                            <td><a href="ajouterRapport.php?id=<?= $dossier['idDossier']; ?>">Rapport</a></td>
                         </tr>
                     <?php endforeach;?>
                     </tbody>
