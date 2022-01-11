@@ -57,7 +57,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
             $idUtilisateur = $_SESSION['idUtilisateur'];
                         
             $updateDossier = $connexion->prepare("UPDATE dossier SET nomClient = ?, prenomClient = ?, adresseGeographieClient = ?, quartierClient = ?, typePieceClient = ?, numeroPieceClient = ?, contactClient = ?, dateReception = ?, idUtilisateur = ?, idAgence = ?, idProjet = ? WHERE idDossier = $getIdDossier"); 
-            $updateDossier->execute(array($nomClient, $prenomClient, $adresseGeographieClient, $quartierClient, $typePieceClient, $numeroPieceClient, $contactClient, $dateReception, $idUtilisateur, $idAgence, $idProjet, $getIdDossier));
+            $updateDossier->execute(array($nomClient, $prenomClient, $adresseGeographieClient, $quartierClient, $typePieceClient, $numeroPieceClient, $contactClient, $dateReception, $idUtilisateur, $idAgence, $idProjet));
             header('Location: dossier.php');
         }
     }else{
@@ -96,7 +96,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                 <label for="nomProjet">Nom projet</label>
                 <select id="nomProjet" name="nomProjet">
                 <?php foreach($projets as $projet):?>
-                    <option value="<?php echo $idProjet;?>"><?php echo $projet['nomProjet'];?></option>
+                    <option value="<?php echo $projet['idProjet'];?>"><?php echo $projet['nomProjet'];?></option>
                 <?php endforeach;?>
                 </select>
             </div>
